@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="admindash.css"> <!-- Link to external CSS -->
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/dashboard/admin">Home</a></li>
+                <li><a href="/dashboard/admin/manage-researchers">Manage Researchers</a></li>
+                <li><a href="/dashboard/admin/manage-papers">Manage Papers</a></li>
+                <li><a href="/dashboard/admin/view-feedback">View Feedback</a></li>
+                <li><a href="/dashboard/admin/settings">Settings</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="dashboard-content">
+            <h1>Welcome, Admin</h1>
+            
+            <!-- Notifications Section -->
+            <div id="notifications">
+                <h2>Recent Updates</h2>
+                <ul>
+                    <li>New researcher applications pending approval.</li>
+                    <li>Recent papers submitted for review.</li>
+                    <li>System maintenance scheduled for tomorrow.</li>
+                </ul>
+            </div>
+
+            <!-- Available Actions Section -->
+            <div class="dashboard-options">
+                <button id="manageResearchersBtn">Manage Researchers</button>
+                <button id="managePapersBtn">Manage Research Papers</button>
+                <button id="viewFeedbackBtn">View Paper Feedback</button>
+                <button id="settingsBtn">System Settings</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Research Paper Management System</p>
+    </footer>
+
+    <script src="admindash.js"></script> <!-- Link to external JS -->
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viewer Dashboard</title>
+    <link rel="stylesheet" href="vdash.css"> <!-- Link to external CSS -->
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/dashboard/viewer">Home</a></li>
+                <li><a href="/dashboard/viewer/papers">View Research Papers</a></li>
+                <li><a href="/dashboard/viewer/profile">Profile</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="dashboard-content">
+            <h1>Welcome to the Viewer Dashboard</h1>
+            
+            <!-- Notifications Section -->
+            <div id="notifications">
+                <h2>Recent Updates</h2>
+                <ul>
+                    <li>New research paper added: "Machine Learning in Healthcare".</li>
+                    <li>Upcoming webinar on data science next week.</li>
+                </ul>
+            </div>
+
+            <!-- Available Actions Section -->
+            <div class="dashboard-options">
+                <button id="viewPapersBtn">View Research Papers</button>
+                <button id="exploreOpportunitiesBtn">Explore Research Opportunities</button>
+                <button id="editProfileBtn">Edit Profile</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Research Paper Management System</p>
+    </footer>
+
+    <script src="vdashscript.js"></script> <!-- Link to external JS -->
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Researcher Dashboard</title>
+    <link rel="stylesheet" href="rdashstyles.css"> <!-- Add your styles here -->
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/dashboard/researcher">Home</a></li>
+                <li><a href="/dashboard/researcher/upload">Upload Paper</a></li>
+                <li><a href="/dashboard/researcher/submissions">My Papers</a></li>
+                <li><a href="/dashboard/researcher/profile">Profile</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="dashboard-content">
+            <h1>Welcome to Your Dashboard, Researcher</h1>
+            
+            <!-- Notifications / Updates Section -->
+            <div id="notifications">
+                <h2>Notifications</h2>
+                <ul>
+                    <li>New feedback received for your paper "XYZ".</li>
+                    <li>Upcoming conference submission deadline: March 5th.</li>
+                </ul>
+            </div>
+
+            <!-- Options Section -->
+            <div class="dashboard-options">
+                <button id="uploadPaperBtn">Upload Research Paper</button>
+                <button id="viewPapersBtn">View & Manage Submitted Papers</button>
+                <button id="collaborateBtn">Collaborate with Reviewers</button>
+                <button id="exploreOpportunitiesBtn">Explore Journal Opportunities</button>
+                <button id="editProfileBtn">Edit Profile</button>
+                <button id="viewFeedbackBtn">View Feedback on Papers</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Research Paper Management System</p>
+    </footer>
+
+    <script src="rdashscript.js"></script> <!-- Add your JS functions here -->
+</body>
+</html>
