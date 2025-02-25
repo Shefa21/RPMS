@@ -1,0 +1,103 @@
+body {
+    font-family: arial, sans-serif;
+    background: rgba(87, 128, 136, 0.832);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 25px;
+    padding-bottom: 10px;
+    height: 100vh;
+    height:fit-content ;
+}
+#space{
+    height:20px;
+    
+}
+.container {
+    background: rgba(207, 181, 128, 0.884);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 550px;
+
+}
+
+h2 {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 6px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    margin-top: 15px;
+    background-color: #28a1a7;
+    color: white;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 5px;
+    width:60px;
+   
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+#preview {
+    margin-top: 8px;
+    font-size: 12px;
+    color: #555;
+}
+#authorFields {
+    margin-bottom: 10px;
+}
+
+.remove-author {
+    margin-left: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+#dateFields {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+    margin-bottom: 5px;
+}
+
+#dateFields select {
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+#addAuthor
+{
+    width:120px;
+}
+@media screen and (max-width: 480px) {
+    .container {
+        width: 100%;
+    }
+    button {
+        width: 100%;
+    }
+}

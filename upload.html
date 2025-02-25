@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="up.css">
+</head>
+
+<body>
+    <div id = "space">
+        
+        </div>
+        <div class="container">
+            <h2>Submit Your Research Paper</h2>
+            <form id="paperForm">
+                <label for="title">Paper Title:</label>
+                <input type="text" id="title" name="title" required>                
+                <label for="authors">Author(s) Name:</label>
+                <div id="authorFields">
+              <input type="text" name="authors[]" placeholder="Enter Author Name" required>
+                 </div>
+<button type="button" id="addAuthor">Add Other Author</button>
+    
+                <label for="category">Research Field:</label>
+                <select id="category" name="category" required>
+                    <option value="">Select Category</option>
+                    <option value="Computer Science">Computer Science</option>
+                    <option value="Engineering">Engineering</option>
+                    <option value="Mathematics">Mathematics</option>
+                    <option value="Biology">Biology</option>
+                    <option value="Quantum Physics">Quantum Physics</option>
+                    <option value="Data Science">Data Science</option>
+                    <option value="Mechine Learning">Mechine Learning</option>
+                    <option value="Physics">Physics</option>
+                    
+                </select>
+    
+                <label for="file">Upload Paper (PDF only):</label>
+                <input type="file" id="file" name="file" accept=".pdf" required>
+                <label for="date">Publication Date:</label>
+<div id="dateFields">
+    <select name="day" id="day" required>
+        <option value="">Day</option>
+        <!-- Populate days dynamically using JavaScript -->
+    </select>
+    
+    <select name="month" id="month" required>
+        <option value="">Month</option>
+        <option value="January">January</option>
+        <option value="February">February</option>
+        <option value="March">March</option>
+        <option value="April">April</option>
+        <option value="May">May</option>
+        <option value="June">June</option>
+        <option value="July">July</option>
+        <option value="August">August</option>
+        <option value="September">September</option>
+        <option value="October">October</option>
+        <option value="November">November</option>
+        <option value="December">December</option>
+    </select>
+    
+    <select name="year" id="year" required>
+        <option value="">Year</option>
+
+    </select>
+    
+</div>
+<div class="abstract">
+    <label for="abstract">Abstract:</label>
+    <textarea id="abstract" name="abstract" rows="4"></textarea>
+</div>
+                <div id="preview"></div>
+    
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    
+        <script src="script.js"></script>
+    
+</body>
+</html>

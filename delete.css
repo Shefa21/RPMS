@@ -1,0 +1,71 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url("del2Image.avif") no-repeat center center;
+    background-size: cover;
+    
+}
+
+.container {
+    width: 90%;
+    max-width: 600px;
+    padding: 20px;
+    background-color: #21c8ceb4;;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h2 {
+    color: black;
+}
+
+.paper-info {
+    padding: 20px;
+    border: 1px solid #ec4d4d;
+    margin-bottom: 20px;
+    background-color:white;
+    
+}
+
+.btn-container {
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+}
+
+.btn-container button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.delete {
+    background-color: #7f8c8d;
+    color: white;
+}
+
+.delete:hover {
+    background-color: #c0392b;
+}
+
+.cancel {
+    background-color: #7f8c8d;
+    color: white;
+}
+
+.cancel:hover {
+    background-color: #95a5a6;
+}
+
+.cancel a {
+    text-decoration: none;
+    color: white;
+}

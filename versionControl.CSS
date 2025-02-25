@@ -1,0 +1,56 @@
+#container{
+    background-color: rgba(255, 253, 208, 0.637);
+    width:365px;
+    margin-top:200px ;
+    margin-left: 100px;
+    padding-bottom: 8px;
+    padding-top: 4px;
+}
+#history{
+    width:365px;
+    margin-top: 20px;
+    margin-left: 100px;
+    background-color: rgba(255, 253, 208, 0.637);
+    padding-bottom:2px;
+    padding-top: 2px;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
+    margin: 0;
+    background: url("verC.avif");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+a{
+    text-decoration: none;
+    
+}
+button{
+    background-color: skyblue;
+}
+#container{
+    background-color: rgba(255, 255, 255, 0.8); 
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 50%; /* Adjust as needed */
+    max-width: 500px;
+    margin-bottom: 20px; /* Adds spacing between divs */
+}
+#history{
+    background-color: rgba(255, 255, 255, 0.8); 
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 50%; /* Adjust as needed */
+    max-width: 500px;
+
+}
+#hish1 a:hover {
+    color: blue; /* Change color on hover */
+}
