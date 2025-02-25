@@ -4,7 +4,6 @@ body {
     align-items: center; 
     height: 100vh; 
     margin: 0; 
-    background-color: #f0f0f0;
     background: url('bgimageManagement.webp');
 }
 
@@ -19,7 +18,7 @@ ul {
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Styling for li items */
+
 li {
     background-color: #5f9ea0;
     color: #f4e0c3;
@@ -38,4 +37,50 @@ li:hover {
 #editLink{
     text-decoration: none;
     color: #f4e0c3;
+}
+a{
+    text-decoration: none;
+    color:#5da4a6e6;
+}
+#back {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    color: aliceblue;
+    border: 2px solid #ffffff;
+    border-radius: 12px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    
+    position: fixed;
+    bottom: 20px; 
+    right: 20px;  
+}
+
+#back:hover {
+    background-color: rgba(255, 255, 255, 1);
+    transform: scale(1.05);
+}
+
+#back:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+@media screen and (max-width: 768px) {
+    body {
+        padding: 10px; 
+    }
+
+    ul {
+        width: 100%; 
+        padding: 15px; 
+    }
+
+    li {
+        font-size: 1rem; 
+        padding: 8px; 
+    }
 }

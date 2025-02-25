@@ -14,7 +14,7 @@ body {
     
 }
 .container {
-    background: rgba(207, 181, 128, 0.884);
+    background: rgba(216, 179, 105, 0.641);
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -92,6 +92,35 @@ button:hover {
 #addAuthor
 {
     width:120px;
+}
+#back {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    color: aliceblue;
+    border: 2px solid #ffffff;
+    border-radius: 12px;
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    width: 100px;
+    position: fixed;
+    bottom: 20px; 
+    right: 20px;  
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+#back:hover {
+    background-color: rgba(255, 255, 255, 1);
+    transform: scale(1.05);
+}
+
+#back:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
 }
 @media screen and (max-width: 480px) {
     .container {

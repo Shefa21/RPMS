@@ -38,19 +38,62 @@ button{
     border-radius: 10px;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
     text-align: center;
-    width: 50%; /* Adjust as needed */
+    width: 50%; 
     max-width: 500px;
-    margin-bottom: 20px; /* Adds spacing between divs */
+    margin-bottom: 20px; 
 }
 #history{
     background-color: rgba(255, 255, 255, 0.8); 
     border-radius: 10px;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
     text-align: center;
-    width: 50%; /* Adjust as needed */
+    width: 50%; 
     max-width: 500px;
 
 }
 #hish1 a:hover {
-    color: blue; /* Change color on hover */
+    color: blue; 
+}
+
+#back {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    color: aliceblue;
+    border: 2px solid #ffffff;
+    border-radius: 12px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    
+    position: fixed;
+    bottom: 20px; 
+    right: 20px;  
+}
+
+#back:hover {
+    background-color: rgba(255, 255, 255, 1);
+    transform: scale(1.05);
+}
+
+#back:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+@media screen and (max-width: 768px) {
+    #container, #history {
+        width: 90%; 
+        max-width: 400px;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 20px; 
+    }
+
+    select, button {
+        font-size: 14px; 
+}
 }
