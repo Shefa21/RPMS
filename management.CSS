@@ -38,6 +38,10 @@ li:hover {
     text-decoration: none;
     color: #f4e0c3;
 }
+#deleteLink{
+    text-decoration: none;
+    color: #f4e0c3;
+}
 a{
     text-decoration: none;
     color:#5da4a6e6;
