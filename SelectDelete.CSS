@@ -1,0 +1,90 @@
+body { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    margin: 0;
+    background: url("SelectDelPic.webp");
+}
+
+.container {
+    width: 980px;
+    height: 500px;
+    background-color: rgba(0, 0, 0, 0.695);
+    display: flex;
+    flex-direction: column; 
+    justify-content: top; 
+    align-items: center;
+    border: 3px solid black;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.innerBox {
+    width: 670px ;
+    height: 370px;  
+    background-color: rgba(127, 140, 141, 0.7);
+    display: flex;
+    flex-direction: column;  
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    margin-top: 40px;
+    position: relative;
+    
+}
+.inputGroup {
+    
+    display: flex;
+    align-items: center;
+}
+
+label {
+    font-size: 18px;
+    color: white;
+    margin-bottom: 5px;
+    margin-right: 10px; 
+    width: 120px; 
+    text-align: left;
+}
+
+input {
+    width: 450px;
+    padding: 15px;
+    margin-top: 15px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    
+    position: relative;
+}
+.btn {
+    padding: 8px 20px;
+    width: 100px;
+    margin: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border: white;
+    border-radius: 5px;
+    background-color:#7f8c8d;
+    color: white;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover {
+    background-color: rgb(0, 105, 217);
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+@media screen and (max-width: 480px) {
+    .btn {
+        width: 80%;
+    }
+}
