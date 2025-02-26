@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research Papers Search</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Research Papers Search</h1>
+    
+    <!-- Search Bar -->
+    <div class="search-bar">
+      <input type="text" id="search" placeholder="Search papers by keywords..." />
+      <button type="button">Search</button>
+    </div>
+    
+    <!-- Filters Section -->
+    <div class="filters">
+      <h2>Filters</h2>
+      
+      <!-- Author Filter -->
+      <div class="filter">
+        <label for="author">Author:</label>
+        <input type="text" id="author" placeholder="Search by author name">
+      </div>
+
+      <!-- Publication Year Filter -->
+      <div class="filter">
+        <label for="year">Publication Year:</label>
+        <select id="year">
+          <option value="">Select Year</option>
+          <option value="2023">2023</option>
+          <option value="2022">2022</option>
+          <option value="2021">2021</option>
+          <option value="2020">2020</option>
+        </select>
+      </div>
+
+      <!-- Research Domain Filter -->
+      <div class="filter">
+        <label for="domain">Research Domain:</label>
+        <select id="domain">
+          <option value="">Select Domain</option>
+          <option value="engineering">Engineering</option>
+          <option value="medicine">Medicine</option>
+          <option value="computer-science">Computer Science</option>
+          <option value="astrophysics">Astrophysics</option>
+          <option value="climate-change">Climate Change</option>
+        </select>
+      </div>
+
+      <!-- Category Filter -->
+      <div class="filter">
+        <label for="category">Category:</label>
+        <select id="category">
+          <option value="">Select Category</option>
+          <option value="papers">Papers</option>
+          <option value="books">Books</option>
+          <option value="journals">Journals</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
