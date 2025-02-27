@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citation Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Citation Generator</h1>
+
+        <form>
+            <!-- Paper Title -->
+            <div class="form-group">
+                <label for="title">Paper Title:</label>
+                <input type="text" id="title" placeholder="Enter paper title">
+            </div>
+
+            <!-- Author Name -->
+            <div class="form-group">
+                <label for="author">Author(s):</label>
+                <input type="text" id="author" placeholder="Enter author names">
+            </div>
+
+            <!-- Publication Year -->
+            <div class="form-group">
+                <label for="year">Publication Year:</label>
+                <input type="number" id="year" placeholder="Enter publication year">
+            </div>
+
+            <!-- Citation Format Selection -->
+            <div class="form-group">
+                <label for="citation-format">Select Citation Format:</label>
+                <select id="citation-format">
+                    <option value="">Select Format</option>
+                    <option value="apa">APA</option>
+                    <option value="mla">MLA</option>
+                    <option value="ieee">IEEE</option>
+                </select>
+            </div>
+
+            <!-- Generate Citation Button -->
+            <button type="submit">Generate Citation</button>
+        </form>
+
+        <!-- Citation Output -->
+        <div class="citation-output">
+            <h2>Generated Citation</h2>
+            <p class="citation-text">Your formatted citation will appear here.</p>
+        </div>
+    </div>
+
+</body>
+</html>
