@@ -3,47 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Viewer Dashboard</title>
-    <link rel="stylesheet" href="vdash.css"> <!-- Link to external CSS -->
+    <title>Research Paper Management</title>
+    <link rel="stylesheet" href="vdash.css">
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="/dashboard/viewer">Home</a></li>
-                <li><a href="/dashboard/viewer/papers">View Research Papers</a></li>
-                <li><a href="/dashboard/viewer/profile">Profile</a></li>
-                <li><a href="/logout">Logout</a></li>
-            </ul>
-        </nav>
+        <div class="logo"><img src="logo.jpg" alt="Logo"></div>
+        <div class="login"><a href="login.html">Login</a></div>
     </header>
 
+    <div class="hero-section">
+        <h1>Explore the world of research, connect with experts, and discover groundbreaking ideas</h1>
+        <div class="search-bar">
+            <input type="text" placeholder="Search research papers, authors...">
+            <button>Search</button>
+        </div>
+        <div class="advanced-search">
+            <a href="SearchFilter.html">Advanced Search</a>
+        </div>
+    </div>
+
     <main>
-        <section class="dashboard-content">
-            <h1>Welcome to the Viewer Dashboard</h1>
-            
-            <!-- Notifications Section -->
-            <div id="notifications">
-                <h2>Recent Updates</h2>
+        <section class="sidebar">
+            <div class="card">
+                <h2>🔥 Trending Topics</h2>
                 <ul>
-                    <li>New research paper added: "Machine Learning in Healthcare".</li>
-                    <li>Upcoming webinar on data science next week.</li>
+                    <li><a href="#">AI in Healthcare</a></li>
+                    <li><a href="#">Blockchain Security</a></li>
+                    <li><a href="#">Quantum Computing</a></li>
+                    <li><a href="#">Green Energy Innovations</a></li>
                 </ul>
             </div>
 
-            <!-- Available Actions Section -->
-            <div class="dashboard-options">
-                <button id="viewPapersBtn">View Research Papers</button>
-                <button id="exploreOpportunitiesBtn">Explore Research Opportunities</button>
-                <button id="editProfileBtn">Edit Profile</button>
+            <div class="card">
+                <h2>🏆 Top Researchers</h2>
+                <ul>
+                    <li><a href="#">Dr. Alice Smith</a></li>
+                    <li><a href="#">Prof. John Doe</a></li>
+                    <li><a href="#">Dr. Emily Watson</a></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>📅 Upcoming Conferences</h2>
+                <ul>
+                    <li><a href="#">AI & Data Science - April 2025</a></li>
+                    <li><a href="#">Blockchain Summit - June 2025</a></li>
+                    <li><a href="#">Climate Change Tech - August 2025</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="main-content">
+            <div class="card featured">
+                <h2>⭐ Featured Research Papers</h2>
+                <div class="paper">
+                    <img src="paper1.jpg" alt="Research Paper Image">
+                    <h3><a href="#">Small Models, Big Impact: Efficient Corpus and Graph-Based Adaptation of Small Multilingual Language Models for Low-Resource Languages</a></h3>
+                    <p><strong>Type:</strong> Preprint</p>
+                    <p><strong>Published:</strong> February 2025</p>
+                    <p><strong>Reads:</strong> 30</p>
+                    <p><strong>Authors:</strong> Daniil Gurgurov, Ivan Vykopal, Josef van Genabith, Simon Ostermann</p>
+                    <button class="save-btn">❤️ Save</button>
+                    <button class="follow-btn">Follow</button>
+                    <button class="recommend-btn">Recommend</button>
+                    <button class="share-btn">Share</button>
+                    <button class="download-btn">Download</button>
+                </div>
+                <!-- Add more paper divs as needed -->
+            </div>
+        </section>
+
+        <section class="sidebar-right">
+            <div class="card">
+                <h2>💬 Discussion Forums</h2>
+                <ul>
+                    <li><a href="#">Is AI replacing jobs?</a></li>
+                    <li><a href="#">Best practices in Cybersecurity?</a></li>
+                    <li><a href="#">Future of Quantum Computing?</a></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>📑 Request Research</h2>
+                <input type="text" placeholder="Request a research topic...">
+                <button>Submit</button>
             </div>
         </section>
     </main>
-
-    <footer>
-        <p>Research Paper Management System</p>
-    </footer>
-
-    <script src="vdashscript.js"></script> <!-- Link to external JS -->
 </body>
 </html>
