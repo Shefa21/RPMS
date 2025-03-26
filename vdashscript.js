@@ -1,12 +1,14 @@
-// Event listeners for the buttons
-document.getElementById("viewPapersBtn").addEventListener("click", () => {
-    window.location.href = "/dashboard/viewer/papers"; // Redirect to View Research Papers page
-});
+document.addEventListener("DOMContentLoaded", function () {
+    fetch("session.php")
+        .then(response => response.json())
+        .then(data => {
+            const authLink = document.getElementById("authLink");
 
-document.getElementById("exploreOpportunitiesBtn").addEventListener("click", () => {
-    window.location.href = "/dashboard/viewer/opportunities"; // Redirect to Research Opportunities page
-});
-
-document.getElementById("editProfileBtn").addEventListener("click", () => {
-    window.location.href = "/dashboard/viewer/profile"; // Redirect to Profile page
+            if (data.loggedIn) {
+                authLink.innerHTML = '<a href="logout.php" class="logout-btn">Logout</a>';
+            } else {
+                authLink.innerHTML = '<a href="login.html" class="login-btn">Login</a>';
+            }
+        })
+        .catch(error => console.error("Error fetching session status:", error));
 });
