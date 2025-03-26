@@ -119,6 +119,26 @@ p {
     color: #fff; /* This will make the "Remember me" text white */
 }
 
+.error {
+    color: red !important; /* Ensures red text color */
+    background-color: #170b0b !important; /* Red background */
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.success {
+    color: white;
+    background-color: #4CAF50; /* Green */
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
 @media (max-width: 740px) {
     body::before {
         display: none;
