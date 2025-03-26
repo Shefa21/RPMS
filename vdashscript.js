@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (data.loggedIn) {
                 authLink.innerHTML = '<a href="logout.php" class="logout-btn">Logout</a>';
             } else {
-                authLink.innerHTML = '<a href="login.html" class="login-btn">Login</a>';
+                authLink.innerHTML = '<a href="login_form.php" class="login-btn">Login</a>';
             }
         })
         .catch(error => console.error("Error fetching session status:", error));
