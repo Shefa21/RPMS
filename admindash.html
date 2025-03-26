@@ -3,43 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
-    <link rel="stylesheet" href="admindash.css"> <!-- Link to external CSS -->
+    <title>Researcher Dashboard</title>
+    <link rel="stylesheet" href="admindash.css"> <!-- Link to styles -->
 </head>
 <body>
     <header>
         <nav>
             <ul>
-                <li><a href="/dashboard/admin">Home</a></li>
-                <li><a href="/dashboard/admin/manage-researchers">Manage Researchers</a></li>
-                <li><a href="/dashboard/admin/manage-papers">Manage Papers</a></li>
-                <li><a href="/dashboard/admin/view-feedback">View Feedback</a></li>
-                <li><a href="/dashboard/admin/settings">Settings</a></li>
-                <li><a href="/logout">Logout</a></li>
+                <li><a href="vdash.html">Home</a></li> <!-- Fixed link -->
+                <li><a href="delete_user.php">Manage Researchers</a></li>
+                <li><a href="profile.php">Profile</a></li>
+                <li id="authLink"><a href="login_form.php" class="login-btn">Login</a></li> <!-- This will be updated dynamically -->
             </ul>
         </nav>
     </header>
 
     <main>
         <section class="dashboard-content">
-            <h1>Welcome, Admin</h1>
-            
-            <!-- Notifications Section -->
+            <h1>Welcome, Researcher</h1>
+
+            <!-- Notifications -->
             <div id="notifications">
-                <h2>Recent Updates</h2>
-                <ul>
-                    <li>New researcher applications pending approval.</li>
-                    <li>Recent papers submitted for review.</li>
-                    <li>System maintenance scheduled for tomorrow.</li>
+                <h2>Notifications</h2>
+                <ul id="notificationList">
+                    <li>New feedback received for your paper "XYZ".</li>
+                    <li>Upcoming conference submission deadline: March 5th.</li>
                 </ul>
             </div>
 
-            <!-- Available Actions Section -->
+            <!-- Dashboard Options -->
             <div class="dashboard-options">
-                <button id="manageResearchersBtn">Manage Researchers</button>
-                <button id="managePapersBtn">Manage Research Papers</button>
-                <button id="viewFeedbackBtn">View Paper Feedback</button>
-                <button id="settingsBtn">System Settings</button>
+                <button id="viewPapersBtn">View & Manage Papers</button>
             </div>
         </section>
     </main>
@@ -48,6 +42,6 @@
         <p>Research Paper Management System</p>
     </footer>
 
-    <script src="admindash.js"></script> <!-- Link to external JS -->
+    <script src="admindash.js"></script> <!-- JavaScript file -->
 </body>
 </html>

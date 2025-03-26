@@ -1,24 +1,31 @@
-// Event listeners for the buttons
-document.getElementById("uploadPaperBtn").addEventListener("click", () => {
-    window.location.href = "/dashboard/researcher/upload"; // Redirect to Upload page
-});
+document.addEventListener("DOMContentLoaded", function () {
+    // Button navigation setup
+    const pages = {
+        viewPapersBtn: "submissions.html",
+        collaborateBtn: "collaborate.html",
+        exploreOpportunitiesBtn: "opportunities.html",
+        viewFeedbackBtn: "feedback.html"
+    };
 
-document.getElementById("viewPapersBtn").addEventListener("click", () => {
-    window.location.href = "/dashboard/researcher/submissions"; // Redirect to My Papers page
-});
+    Object.keys(pages).forEach(btnId => {
+        const button = document.getElementById(btnId);
+        if (button) {
+            button.addEventListener("click", () => {
+                window.location.href = pages[btnId];
+            });
+        }
+    });
 
-document.getElementById("collaborateBtn").addEventListener("click", () => {
-    window.location.href = "/dashboard/researcher/collaborate"; // Redirect to Collaboration page
-});
-
-document.getElementById("exploreOpportunitiesBtn").addEventListener("click", () => {
-    window.location.href = "/dashboard/researcher/opportunities"; // Redirect to Opportunities page
-});
-
-document.getElementById("editProfileBtn").addEventListener("click", () => {
-    window.location.href = "/dashboard/researcher/profile"; // Redirect to Profile page
-});
-
-document.getElementById("viewFeedbackBtn").addEventListener("click", () => {
-    window.location.href = "/dashboard/researcher/feedback"; // Redirect to Feedback page
+    // Handle Login/Logout dynamically using PHP session check
+    fetch("session.php") // Fetch login status from PHP
+        .then(response => response.json())
+        .then(data => {
+            const authLink = document.getElementById("authLink");
+            if (data.loggedIn) {
+                authLink.innerHTML = `<a href="logout.php" class="logout-btn">Logout</a>`;
+            } else {
+                authLink.innerHTML = `<a href="login_form.php" class="login-btn">Login</a>`;
+            }
+        })
+        .catch(error => console.error("Error fetching login status:", error));
 });
