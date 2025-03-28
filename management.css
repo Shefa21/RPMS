@@ -1,0 +1,116 @@
+/* Body Styling */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: url('bgimageManagement.webp') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* List Styling */
+ul {
+    list-style: none;
+    padding: 0;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    width: 450px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* List Item Styling */
+li {
+    background-color: #f8fafc;
+    color: #333;
+    padding: 12px;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+li:hover {
+    background-color: #4f7ca5;
+    color: #ffffff;
+    transform: scale(1.05);
+}
+
+/* Link Styling */
+#editLink, #deleteLink {
+    text-decoration: none;
+    color: #4f7ca5;
+}
+
+#editLink:hover, #deleteLink:hover {
+    color: #ffffff;
+    background-color: #4f7ca5;
+    border-radius: 4px;
+    padding: 4px 8px;
+}
+
+/* General Anchor Styling */
+a {
+    text-decoration: none;
+    color: #4f7ca5;
+}
+
+a:hover {
+    color: #006699;
+}
+
+/* Back Button Styling */
+#back {
+    background-color: #ffffff;
+    color: #4f7ca5;
+    border: 2px solid #4f7ca5;
+    border-radius: 12px;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+#back:hover {
+    background-color: #4f7ca5;
+    color: #ffffff;
+    transform: scale(1.05);
+}
+
+#back:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(79, 124, 165, 0.8);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    ul {
+        width: 100%;
+        padding: 15px;
+    }
+
+    li {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    #back {
+        font-size: 14px;
+        padding: 10px 20px;
+        bottom: 10px;
+        right: 10px;
+    }
+}

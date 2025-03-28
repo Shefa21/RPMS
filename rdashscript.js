@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     // Button navigation setup
     const pages = {
-        viewPapersBtn: "submissions.html",
+        viewPapersBtn: "management.php",
         collaborateBtn: "collaborate.html",
         exploreOpportunitiesBtn: "opportunities.html",
         viewFeedbackBtn: "feedback.html"
