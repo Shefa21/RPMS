@@ -1,15 +1,15 @@
 <?php
-include 'db_connect.php'; // Database connection
+include 'db_connect.php'; 
 
 if (isset($_GET['query'])) {
-    $search = htmlspecialchars($_GET['query']); // Prevent XSS
+    $search = htmlspecialchars($_GET['query']); 
     $param = "%$search%";
 
-    $limit = 5; // Number of results per page
+    $limit = 5; 
     $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
     $start = ($page - 1) * $limit;
 
-    // Get total number of matching results
+   
     $count_sql = "SELECT COUNT(*) FROM papers WHERE 
                   title LIKE ? OR 
                   authors LIKE ? OR 
@@ -63,18 +63,21 @@ if (isset($_GET['query'])) {
 }
 ?>
 
-<!-- Back Button to Search Page -->
+
 <div class="back-button-container">
-    <a href="vdash.html" class="back-btn">Back to Search</a>
+    <a href="vdash.html" class="back-btn"> DashBoard </a>
 </div>
 
 
 <style>
     body {
+        
         font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
+        background-color: white;
         color: #333;
         padding: 20px;
+       background : #95c8d8;
+       
     }
 
     .results {
@@ -118,21 +121,23 @@ if (isset($_GET['query'])) {
     .read-btn:hover {
         background-color: #2980b9;
     }
-    /* Back Button Styling */
+    
 .back-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
     display: inline-block;
-    font-size: 18px;
+    font-size: 16px;
     padding: 10px 15px;
-    background-color: #f39c12;
+    background-color:rgb(15, 106, 166);
     color: white;
     text-decoration: none;
     border-radius: 5px;
     transition: 0.3s;
-    margin-top: 20px;
 }
 
 .back-btn:hover {
-    background-color: #e67e22;
+    background-color:rgb(12, 94, 62);
 }
 
 </style>
