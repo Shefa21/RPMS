@@ -13,7 +13,7 @@
     <!-- Search Bar -->
     <div class="search-bar">
       <input type="text" id="search" placeholder="Search papers by keywords..." />
-      <button type="button">Search</button>
+      <button type="button" id="search-btn">Search</button>
     </div>
     
     <!-- Filters Section -->
@@ -62,6 +62,40 @@
         </select>
       </div>
     </div>
+
+    <!-- Display Search Results -->
+    <div id="results"></div>
   </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('#search-btn').click(function() {
+        // Get values from the search and filter inputs
+        const searchQuery = $('#search').val();
+        const author = $('#author').val();
+        const year = $('#year').val();
+        const domain = $('#domain').val();
+        const category = $('#category').val();
+
+        // Send an AJAX request to the backend with search data
+        $.ajax({
+          url: 'SearchFiler.php',
+          method: 'GET',
+          data: {
+            search: searchQuery,
+            author: author,
+            year: year,
+            domain: domain,
+            category: category
+          },
+          success: function(response) {
+            // Display the search results
+            $('#results').html(response);
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

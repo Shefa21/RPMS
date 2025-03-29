@@ -1,7 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
     // Button navigation setup
     const pages = {
-        viewPapersBtn: "submissions.html",
+        addConferenceBtn: "add_conference.php", // Ensure this page exists and is correctly linked
+
+        // Add more button-page mappings as needed
     };
 
     Object.keys(pages).forEach(btnId => {
@@ -21,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             const authLink = document.getElementById("authLink");
             if (data.loggedIn) {
-                authLink.innerHTML = `<a href="logout.php" class="logout-btn">Logout</a>`; // Change to logout
+                authLink.innerHTML = `<a href="logout.php" class="logout-btn">Logout</a>`; // Change to logout if logged in
             } else {
                 authLink.innerHTML = `<a href="login_form.php" class="login-btn">Login</a>`; // Show login if not logged in
             }

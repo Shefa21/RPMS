@@ -113,7 +113,7 @@ h2 {
     text-decoration: underline;
 }
 
-.save-btn, .follow-btn, .recommend-btn, .share-btn, .download-btn {
+.save-btn, .follow-btn, .recommend-btn, .share-btn, .download-btn , .profile-btn , .feedback-btn {
     background: #007bff;
     color: white;
     border: none;
@@ -123,7 +123,7 @@ h2 {
     margin-right: 5px;
 }
 
-.save-btn:hover, .follow-btn:hover, .recommend-btn:hover, .share-btn:hover, .download-btn:hover {
+.save-btn:hover, .follow-btn:hover, .recommend-btn:hover, .share-btn:hover, .download-btn:hover, .profile-btn:hover, .feedback-btn:hover {
     background: #0056b3;
 }
 

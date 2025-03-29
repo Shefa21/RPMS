@@ -4,9 +4,10 @@ document.addEventListener("DOMContentLoaded", function () {
         viewPapersBtn: "management.php",
         collaborateBtn: "collaborate.html",
         exploreOpportunitiesBtn: "opportunities.html",
-        viewFeedbackBtn: "feedback.html"
+        // Remove viewFeedbackBtn from here since we handle it via AJAX
     };
 
+    // Setting up navigation buttons
     Object.keys(pages).forEach(btnId => {
         const button = document.getElementById(btnId);
         if (button) {
@@ -28,4 +29,35 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         })
         .catch(error => console.error("Error fetching login status:", error));
+
+    // JavaScript to handle feedback display when clicking 'View Feedback' button
+    const feedbackButtons = document.querySelectorAll('.view-feedback-btn');
+
+    feedbackButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            const paperId = this.dataset.paperId;
+
+            // Make an AJAX request to fetch feedback for the selected paper
+            fetch('fetch_feedback.php?paper_id=' + paperId)
+                .then(response => response.json())
+                .then(data => {
+                    const feedbackList = document.getElementById('feedbackList');
+                    feedbackList.innerHTML = ''; // Clear any existing feedback
+
+                    if (data.length === 0) {
+                        feedbackList.innerHTML = '<li>No feedback available.</li>';
+                    } else {
+                        data.forEach(feedback => {
+                            const li = document.createElement('li');
+                            li.innerHTML = `<strong>${feedback.full_name}:</strong> ${feedback.feedback}`;
+                            feedbackList.appendChild(li);
+                        });
+                    }
+
+                    // Show feedback section
+                    document.getElementById('feedbackSection').style.display = 'block';
+                })
+                .catch(error => console.error('Error fetching feedback:', error));
+        });
+    });
 });

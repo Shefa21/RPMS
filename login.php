@@ -25,11 +25,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
             // Redirect based on role
             if ($user['role'] === 'admin') {
-                header("Location: admindash.html");
+                header("Location: admindash.php");
             } elseif ($user['role'] === 'researcher') {
-                header("Location: rdash.html");
+                header("Location: rdash.php");
             } else {
-                header("Location: vdash.html");
+                header("Location: vdash.php");
             }
             exit();
         } else {
