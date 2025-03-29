@@ -1,88 +1,267 @@
-/* General Styles */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+/* Basic table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
 }
 
-.container {
-    text-align: center;
-    width: 90%;
-    max-width: 600px;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Search Bar */
-.search-form {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-.search-form input {
-    width: 70%;
+table th, table td {
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-.search-form button {
-    padding: 10px 15px;
-    border: none;
-    background-color: #007bff;
-    color: white;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-left: 10px;
-}
-
-.search-form button:hover {
-    background-color: #0056b3;
-}
-
-/* Search Results */
-.results {
     text-align: left;
+    border: 1px solid #ddd;
 }
 
-.results h2 {
-    font-size: 20px;
-    margin-bottom: 10px;
+table th {
+    background-color: #f2f2f2;
 }
 
-#search-results p {
-    background: #e3f2fd;
-    padding: 10px;
-    border-radius: 5px;
-    margin: 5px 0;
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
 }
 
-/* Pagination */
+/* Pagination styling */
 .pagination {
+    text-align: center;
     margin-top: 20px;
 }
 
 .pagination a {
     padding: 8px 12px;
-    margin: 5px;
+    margin: 0 4px;
     text-decoration: none;
-    border: 1px solid #007bff;
-    border-radius: 5px;
     color: #007bff;
-    font-weight: bold;
+}
+
+.pagination a.active {
+    background-color: #007bff;
+    color: white;
 }
 
 .pagination a:hover {
-    background-color: #007bff;
+    background-color: #ddd;
+}
+
+/* Read button styling */
+.read-btn {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.read-btn:hover {
+    text-decoration: underline;
+}
+
+/* No results message */
+.no-results {
+    font-size: 18px;
+    color: #888;
+}
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2980b9;
+    --light-gray: #f5f5f5;
+    --medium-gray: #e0e0e0;
+    --dark-gray: #333;
+    --white: #fff;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: var(--white);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2, h3 {
+    color: var(--dark-gray);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+}
+
+h2 {
+    border-bottom: 2px solid var(--medium-gray);
+    padding-bottom: 10px;
+    margin-top: 30px;
+}
+
+h3 {
+    margin-top: 25px;
+    color: var(--secondary-color);
+}
+
+/* Search Form */
+.search-form {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.search-form input[type="text"] {
+    flex: 1;
+    padding: 12px 15px;
+    border: 1px solid var(--medium-gray);
+    border-radius: 4px 0 0 4px;
+    font-size: 16px;
+}
+
+.search-form button {
+    padding: 12px 20px;
+    background-color: var(--primary-color);
     color: white;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.search-form button:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Tables */
+.results-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.results-table th {
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-align: left;
+    padding: 12px 15px;
+    font-weight: 500;
+}
+
+.results-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid var(--medium-gray);
+    vertical-align: top;
+}
+
+.results-table tr:nth-child(even) {
+    background-color: var(--light-gray);
+}
+
+.results-table tr:hover {
+    background-color: #e8f4fc;
+}
+
+/* Read Button */
+.read-btn {
+    display: inline-block;
+    padding: 6px 12px;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    font-size: 14px;
+}
+
+.read-btn:hover {
+    background-color: var(--secondary-color);
+}
+
+.read-btn i {
+    margin-right: 5px;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    list-style: none;
+    padding: 0;
+}
+
+.pagination a {
+    display: inline-block;
+    padding: 8px 16px;
+    margin: 0 4px;
+    text-decoration: none;
+    color: var(--primary-color);
+    border: 1px solid var(--medium-gray);
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+.pagination a.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.pagination a:hover:not(.active) {
+    background-color: var(--light-gray);
+}
+
+/* No results message */
+.no-results {
+    text-align: center;
+    padding: 30px;
+    color: #666;
+    font-size: 18px;
+}
+
+/* Abstract preview */
+.abstract-preview {
+    max-width: 300px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#search-results .results {
+    background-color: #fafafa;
+    padding: 20px;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+}
+#search-results .paper {
+    background-color: #fff;
+    padding: 15px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .search-form {
+        flex-direction: column;
+    }
+    
+    .search-form input[type="text"] {
+        border-radius: 4px;
+        margin-bottom: 10px;
+    }
+    
+    .search-form button {
+        border-radius: 4px;
+    }
+    
+    .results-table {
+        display: block;
+        overflow-x: auto;
+    }
 }
