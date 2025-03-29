@@ -1,76 +1,8 @@
-/* Basic table styling */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-}
-
-table th, table td {
-    padding: 10px;
-    text-align: left;
-    border: 1px solid #ddd;
-}
-
-table th {
-    background-color: #f2f2f2;
-}
-
-table tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-/* Pagination styling */
-.pagination {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.pagination a {
-    padding: 8px 12px;
-    margin: 0 4px;
-    text-decoration: none;
-    color: #007bff;
-}
-
-.pagination a.active {
-    background-color: #007bff;
-    color: white;
-}
-
-.pagination a:hover {
-    background-color: #ddd;
-}
-
-/* Read button styling */
-.read-btn {
-    color: #007bff;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.read-btn:hover {
-    text-decoration: underline;
-}
-
-/* No results message */
-.no-results {
-    font-size: 18px;
-    color: #888;
-}
-:root {
-    --primary-color: #3498db;
-    --secondary-color: #2980b9;
-    --light-gray: #f5f5f5;
-    --medium-gray: #e0e0e0;
-    --dark-gray: #333;
-    --white: #fff;
-}
-
+/* General styling */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: #333;
     background-color: #f9f9f9;
+    color: #333;
     margin: 0;
     padding: 20px;
 }
@@ -78,190 +10,126 @@ body {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    background: var(--white);
+    background: white;
     padding: 25px;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-h1, h2, h3 {
-    color: var(--dark-gray);
-}
-
 h1 {
     text-align: center;
-    margin-bottom: 30px;
-    color: var(--primary-color);
-}
-
-h2 {
-    border-bottom: 2px solid var(--medium-gray);
-    padding-bottom: 10px;
-    margin-top: 30px;
-}
-
-h3 {
-    margin-top: 25px;
-    color: var(--secondary-color);
+    font-size: 28px;
+    color: #3498db;
 }
 
 /* Search Form */
 .search-form {
     display: flex;
+    justify-content: center;
     margin-bottom: 30px;
 }
 
 .search-form input[type="text"] {
     flex: 1;
     padding: 12px 15px;
-    border: 1px solid var(--medium-gray);
-    border-radius: 4px 0 0 4px;
-    font-size: 16px;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
 }
 
 .search-form button {
     padding: 12px 20px;
-    background-color: var(--primary-color);
+    background-color: #3498db;
     color: white;
     border: none;
-    border-radius: 0 4px 4px 0;
+    border-radius: 0 5px 5px 0;
     cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
+    font-size: 18px;
 }
 
 .search-form button:hover {
-    background-color: var(--secondary-color);
+    background-color: #2980b9;
 }
 
-/* Tables */
-.results-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+/* Search Results */
+.results {
+    font-size: 18px; /* Increase overall text size */
+    line-height: 1.6; /* Improve spacing between lines */
+    padding: 20px;
 }
 
-.results-table th {
-    background-color: var(--primary-color);
-    color: var(--white);
-    text-align: left;
-    padding: 12px 15px;
-    font-weight: 500;
+.paper {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.results-table td {
-    padding: 12px 15px;
-    border-bottom: 1px solid var(--medium-gray);
-    vertical-align: top;
+.paper h3 {
+    font-size: 22px; /* Increase title size */
+    color: #2980b9;
 }
 
-.results-table tr:nth-child(even) {
-    background-color: var(--light-gray);
+.paper p {
+    font-size: 18px; /* Increase paragraph size */
+    margin-bottom: 10px;
 }
 
-.results-table tr:hover {
-    background-color: #e8f4fc;
-}
-
-/* Read Button */
 .read-btn {
     display: inline-block;
-    padding: 6px 12px;
-    background-color: var(--primary-color);
+    font-size: 18px; /* Make button text bigger */
+    padding: 10px 15px;
+    background-color: #3498db;
     color: white;
     text-decoration: none;
-    border-radius: 4px;
-    transition: background-color 0.3s;
-    font-size: 14px;
+    border-radius: 5px;
+    transition:  0.3s;
 }
 
 .read-btn:hover {
-    background-color: var(--secondary-color);
+    background-color: #2980b9;
 }
 
-.read-btn i {
-    margin-right: 5px;
-}
 
 /* Pagination */
 .pagination {
     display: flex;
     justify-content: center;
-    margin-top: 30px;
-    list-style: none;
-    padding: 0;
+    margin-top: 20px;
 }
 
 .pagination a {
-    display: inline-block;
-    padding: 8px 16px;
-    margin: 0 4px;
+    padding: 10px 15px;
+    margin: 0 5px;
     text-decoration: none;
-    color: var(--primary-color);
-    border: 1px solid var(--medium-gray);
-    border-radius: 4px;
-    transition: all 0.3s;
+    color: #3498db;
+    border: 1px solid #ddd;
+    border-radius: 5px;
 }
 
 .pagination a.active {
-    background-color: var(--primary-color);
+    background-color: #3498db;
     color: white;
-    border-color: var(--primary-color);
 }
 
-.pagination a:hover:not(.active) {
-    background-color: var(--light-gray);
+.pagination a:hover {
+    background-color: #ddd;
 }
-
-/* No results message */
-.no-results {
-    text-align: center;
-    padding: 30px;
-    color: #666;
+/* Back Button Styling */
+.back-btn {
+    display: inline-block;
     font-size: 18px;
+    padding: 10px 15px;
+    background-color: #f39c12;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+    margin-top: 20px;
 }
 
-/* Abstract preview */
-.abstract-preview {
-    max-width: 300px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-#search-results .results {
-    background-color: #fafafa;
-    padding: 20px;
-    margin-top: 20px;
-    border: 1px solid #ddd;
-}
-#search-results .paper {
-    background-color: #fff;
-    padding: 15px;
-    border: 1px solid #ccc;
-    margin-bottom: 10px;
-}
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .container {
-        padding: 15px;
-    }
-    
-    .search-form {
-        flex-direction: column;
-    }
-    
-    .search-form input[type="text"] {
-        border-radius: 4px;
-        margin-bottom: 10px;
-    }
-    
-    .search-form button {
-        border-radius: 4px;
-    }
-    
-    .results-table {
-        display: block;
-        overflow-x: auto;
-    }
+.back-btn:hover {
+    background-color: #e67e22;
 }

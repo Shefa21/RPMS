@@ -1,14 +1,4 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "rpms";
-
-$conn = new mysqli($servername, $username, $password, $database);
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
 include 'db_connect.php'; // Database connection
 
 if (isset($_GET['query'])) {
@@ -72,3 +62,77 @@ if (isset($_GET['query'])) {
     }
 }
 ?>
+
+<!-- Back Button to Search Page -->
+<div class="back-button-container">
+    <a href="vdash.html" class="back-btn">Back to Search</a>
+</div>
+
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        color: #333;
+        padding: 20px;
+    }
+
+    .results {
+        max-width: 800px;
+        margin: 0 auto;
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .paper {
+        background: #fff;
+        padding: 15px;
+        border: 1px solid #ddd;
+        margin-bottom: 15px;
+        border-radius: 8px;
+    }
+
+    .paper h3 {
+        font-size: 22px;
+        color: #2980b9;
+    }
+
+    .paper p {
+        font-size: 18px;
+        line-height: 1.6;
+    }
+
+    .read-btn {
+        display: inline-block;
+        font-size: 18px;
+        padding: 10px 15px;
+        background-color: #3498db;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: 0.3s;
+    }
+
+    .read-btn:hover {
+        background-color: #2980b9;
+    }
+    /* Back Button Styling */
+.back-btn {
+    display: inline-block;
+    font-size: 18px;
+    padding: 10px 15px;
+    background-color: #f39c12;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+    margin-top: 20px;
+}
+
+.back-btn:hover {
+    background-color: #e67e22;
+}
+
+</style>
