@@ -7,9 +7,10 @@ include 'db.php'; // Ensure database connection is included
 $paper_id = "";
 $doi = "";
 $error_message = "";
+$success_message = "";
 $citation = "";
 $papers = [];
-$success_message = "";
+$search_done = false; // Track if a search was performed
 
 // Handle search request
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["search_paper"])) {
@@ -30,6 +31,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["search_paper"])) {
 
     if (empty($papers)) {
         $error_message = "❌ No matching paper found. Please check the title and author.";
+    } else {
+        $search_done = true; // Set to true when search is successful
     }
 }
 
@@ -46,13 +49,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["generate_citation"])) 
         $stmt->store_result();
 
         if ($stmt->num_rows == 0) {
-            // Insert DOI into citations table
             $stmt = $conn->prepare("INSERT INTO citations (paper_id, doi) VALUES (?, ?)");
             $stmt->bind_param("is", $paper_id, $doi);
             $stmt->execute();
-
-            // Set success message
-            $success_message = "✔️ Citation successfully saved!";
+            $success_message = "✅ Citation saved successfully!";
+        } else {
+            $success_message = "⚠️ Citation already exists.";
         }
 
         // Generate Citation
@@ -69,94 +71,140 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["generate_citation"])) 
     <title>Research Paper Citation</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 40px;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
-        .citation-container, .error-message, .success-message {
-            border-radius: 8px;
-            padding: 20px;
-            margin-top: 20px;
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
         }
-        .citation-container {
-            border: 1px solid #ddd;
-            background-color: #f9f9f9;
+        h1 {
+            color: #333;
         }
-        .error-message {
-            border: 1px solid #ff4d4d;
-            background-color: #ffcccc;
-            color: #cc0000;
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .message {
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-size: 16px;
             font-weight: bold;
         }
         .success-message {
-            border: 1px solid #4CAF50;
             background-color: #d4edda;
             color: #155724;
-            font-weight: bold;
+            border: 1px solid #c3e6cb;
+        }
+        .error-message {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .citation-container {
+            background: #eef6ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border-left: 5px solid #007bff;
+            text-align: left;
         }
         pre {
-            background-color: #e6e6e6;
-            padding: 15px;
-            border-radius: 5px;
-            font-size: 1.1em;
-            white-space: pre-wrap;
-            word-wrap: break-word;
-        }
-        select, input, button {
+            background: #e6e6e6;
             padding: 10px;
-            font-size: 16px;
-            margin-top: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
-    <h1>Research Paper Citation</h1>
+    <div class="container">
+        <h1>Research Paper Citation</h1>
 
-    <!-- Search Paper Form -->
-    <form method="POST">
-        <label for="title">Enter Paper Title:</label>
-        <input type="text" name="title" id="title" required>
+        <!-- Search Paper Form (Only show if no search has been done) -->
+        <?php if (!$search_done): ?>
+            <form method="POST">
+                <label for="title">Enter Paper Title:</label>
+                <input type="text" name="title" id="title" required>
 
-        <label for="author">Enter Author Name:</label>
-        <input type="text" name="author" id="author" required>
+                <label for="author">Enter Author Name:</label>
+                <input type="text" name="author" id="author" required>
 
-        <button type="submit" name="search_paper">Search Paper</button>
-    </form>
+                <button type="submit" name="search_paper">Search Paper</button>
+            </form>
+        <?php endif; ?>
 
-    <!-- Display Search Results -->
-    <?php if (!empty($papers)): ?>
-        <h3>Search Results:</h3>
-        <form method="POST">
-            <select name="paper_id" required onchange="fetchDOI(this.value)">
-                <option value="">-- Select Paper --</option>
-                <?php foreach ($papers as $paper): ?>
-                    <option value="<?= $paper['id']; ?>" data-doi="<?= $paper['doi'] ?? ''; ?>">
-                        <?= htmlspecialchars($paper['title']); ?> (Author: <?= htmlspecialchars($paper['authors']); ?>)
-                    </option>
-                <?php endforeach; ?>
-            </select>
+        <!-- Display Search Results -->
+        <?php if (!empty($papers)): ?>
+            <h3>Search Results:</h3>
+            <form method="POST">
+                <select name="paper_id" required onchange="fetchDOI(this.value)">
+                    <option value="">-- Select Paper --</option>
+                    <?php foreach ($papers as $paper): ?>
+                        <option value="<?= $paper['id']; ?>" data-doi="<?= $paper['doi'] ?? ''; ?>">
+                            <?= htmlspecialchars($paper['title']); ?> (<?= htmlspecialchars($paper['authors']); ?>)
+                        </option>
+                    <?php endforeach; ?>
+                </select>
 
-            <br><br>
-            <label for="doi">Enter DOI:</label>
-            <input type="text" name="doi" id="doi" required>
+                <label for="doi">Enter DOI:</label>
+                <input type="text" name="doi" id="doi" required>
 
-            <button type="submit" name="generate_citation">Generate Citation</button>
-        </form>
-    <?php elseif (!empty($error_message)): ?>
-        <div class="error-message"><?= $error_message; ?></div>
-    <?php endif; ?>
+                <button type="submit" name="generate_citation">Generate Citation</button>
+            </form>
+        <?php endif; ?>
 
-    <!-- Display Success Message -->
-    <?php if (!empty($success_message)): ?>
-        <div class="success-message"><?= $success_message; ?></div>
-    <?php endif; ?>
+        <!-- Show error messages -->
+        <?php if (!empty($error_message)): ?>
+            <div class="message error-message"> <?= $error_message; ?> </div>
+        <?php endif; ?>
 
-    <!-- Display Citation -->
-    <?php if (!empty($citation)): ?>
-    <div class="citation-container">
-        <h2>Citation (BibTeX Format):</h2>
-        <pre><?= htmlspecialchars($citation); ?></pre>
+        <!-- Show success messages -->
+        <?php if (!empty($success_message)): ?>
+            <div class="message success-message"> <?= $success_message; ?> </div>
+        <?php endif; ?>
+
+        <!-- Display Citation -->
+        <?php if (!empty($citation)): ?>
+            <div class="citation-container">
+                <h2>Citation (BibTeX Format):</h2>
+                <pre><?= htmlspecialchars($citation); ?></pre>
+            </div>
+        <?php endif; ?>
     </div>
-    <?php endif; ?>
 
     <script>
         function fetchDOI(paperId) {
@@ -170,6 +218,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["generate_citation"])) 
             }
         }
     </script>
-
 </body>
 </html>
