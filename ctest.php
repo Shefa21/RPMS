@@ -79,6 +79,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["generate_citation"])) 
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            background: url("verC.avif");
         }
         .container {
             background: white;
