@@ -72,14 +72,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["generate_citation"])) 
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f4f4f9;
+            background-color:white;
             margin: 0;
             padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background: url("verC.avif");
+            
+            
         }
         .container {
             background: white;
@@ -107,12 +108,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["generate_citation"])) 
             font-size: 16px;
         }
         button {
-            background-color: #007bff;
+            background-color: rgb(173, 173, 218);
             color: white;
             font-weight: bold;
             border: none;
             cursor: pointer;
             transition: 0.3s;
+            width: 180px;
         }
         button:hover {
             background-color: #0056b3;
