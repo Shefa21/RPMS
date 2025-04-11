@@ -79,17 +79,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["generate_citation"])) 
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            
+            background-image: url('citpic.webp');
+            background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+             background-attachment: fixed; 
             
         }
         .container {
-            background: white;
+            background: rgb(140, 190, 185,.85);
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             width: 100%;
             max-width: 600px;
             text-align: center;
+            opacity:  opacity: 0.5;
         }
         h1 {
             color: #333;
@@ -108,12 +113,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["generate_citation"])) 
             font-size: 16px;
         }
         button {
-            background-color: rgb(173, 173, 218);
+            background-color: rgb(203, 109, 173);
             color: white;
             font-weight: bold;
             border: none;
             cursor: pointer;
-            transition: 0.3s;
             width: 180px;
         }
         button:hover {
@@ -151,6 +155,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["generate_citation"])) 
             overflow-x: auto;
             font-size: 14px;
         }
+        .back-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 18px;
+    padding: 8px 12px;
+    background-color: #2a4e6c;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
     </style>
 </head>
 <body>
@@ -208,7 +225,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["generate_citation"])) 
             </div>
         <?php endif; ?>
     </div>
-
+    <div class="back-button-container">
+                    <a href="rdash.html" class="back-btn">Back</a>
+                </div>
     <script>
         function fetchDOI(paperId) {
             var selectedOption = document.querySelector(`option[value="${paperId}"]`);
